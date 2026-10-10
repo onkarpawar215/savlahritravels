@@ -91,7 +91,7 @@
         background-position: center;
     }
 }
-```css
+
 /* =========================================
    SAVLA HRI TRAVELS - MOBILE SLIDER FIX
    ========================================= */
@@ -252,4 +252,15 @@
     }
 
 }
-```
+
+/* Welcome to Savla Hri Travels heading */
+.hero-slider h1 {
+color: #FFD700;
+font-weight: 800;
+text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-slider h1 .welcome-line {
+color: #FFD700;
+display: block;
+}
