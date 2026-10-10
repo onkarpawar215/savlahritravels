@@ -1,0 +1,38 @@
+/* Logo size override for Savla Hri Travels
+   Loaded after style.css so these values take priority. */
+.brand-container {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.brand-logo-img {
+  width: 110px !important;
+  height: 110px !important;
+  min-width: 110px;
+  max-width: 110px;
+  object-fit: contain;
+  display: block;
+  flex: 0 0 110px;
+}
+.brand-text-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+.brand-title {
+  line-height: 1.15;
+}
+@media (max-width: 576px) {
+  .brand-logo-img {
+    width: 75px !important;
+    height: 75px !important;
+    min-width: 75px;
+    max-width: 75px;
+    flex-basis: 75px;
+  }
+  .brand-container { gap: 8px; }
+  .brand-title { font-size: 1rem; }
+  .brand-subtitle { font-size: .65rem; }
+}
