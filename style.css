@@ -1245,38 +1245,6 @@ h1, h2, h3, h4, h5, h6 {
         font-size: 1.2rem;
     }
 }
-/* Tablet: show 3 photos */
-@media (max-width: 991px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px;
-    }
-
-    .gallery-item {
-        height: 150px;
-    }
-}
-
-/* Mobile: show 2 photos */
-@media (max-width: 576px) {
-    .gallery-section {
-        padding: 45px 0;
-    }
-
-    .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-    }
-
-    .gallery-item {
-        height: 125px;
-        border-radius: 8px;
-    }
-
-    .gallery-overlay {
-        font-size: 1.2rem;
-    }
-}
 /* Lightbox Modal */
 .lightbox-modal {
   display: none;
