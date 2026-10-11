@@ -474,11 +474,20 @@ h1, h2, h3, h4, h5, h6 {
    =================================================================== */
 .hero-section {
   position: relative;
-  background: linear-gradient(135deg, rgba(20, 27, 34, 0.92) 0%, rgba(15, 23, 42, 0.88) 100%),
-              url('../images/hero-bg.jpg') center/cover no-repeat;
+  /* Lighter overlay so the hero photo remains clearly visible */
+  background: linear-gradient(135deg, rgba(20, 27, 34, 0.22) 0%, rgba(15, 23, 42, 0.18) 100%),
+              url('../images/hero-bg.jpg') center center / cover no-repeat;
   color: #ffffff;
   padding: 100px 0 140px 0;
   overflow: hidden;
+  background-color: #64748b;
+}
+
+/* Keep the welcome text readable while letting the photo show through */
+.hero-section .hero-title,
+.hero-section h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .hero-badge {
@@ -1653,4 +1662,24 @@ h1, h2, h3, h4, h5, h6 {
     .btn-instagram i {
         font-size: 0.9rem;
     }
+}
+
+/* ===== LIGHTER HERO BACKGROUND OVERRIDE =====
+   This also helps if the hero section's background is set elsewhere in CSS.
+   If hero-slider.js replaces the image with an inline background, check that
+   JavaScript file too.
+*/
+.hero-section {
+  background-blend-mode: normal;
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    background-image:
+      linear-gradient(135deg, rgba(20, 27, 34, 0.18) 0%, rgba(15, 23, 42, 0.14) 100%),
+      url('../images/hero-bg.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
