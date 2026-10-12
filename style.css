@@ -1747,48 +1747,64 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
   }
 }
-
 /* ==========================================
-   MOBILE HAMBURGER MENU - VISIBILITY FIX
-   Savla Hri Travels
+   SAVLA HRI TRAVELS - MOBILE MENU VISIBILITY FIX
    ========================================== */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
 
-    #mobileToggle {
+    /* Make the hamburger button visible */
+    #mobileToggle,
+    .mobile-toggle {
         display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
         align-items: center !important;
-        gap: 6px !important;
+        justify-content: center !important;
 
-        width: 45px !important;
-        height: 45px !important;
-        padding: 8px !important;
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px !important;
 
-        background-color: #ffffff !important;
+        padding: 0 !important;
+        margin-left: 10px !important;
+
+        background: #ffffff !important;
         border: 2px solid #ff8c00 !important;
         border-radius: 8px !important;
 
+        color: #111111 !important;
+        cursor: pointer !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
         position: relative !important;
         z-index: 99999 !important;
+        flex-shrink: 0 !important;
+    }
 
-        cursor: pointer !important;
+    /* FIX: Your HTML uses an <i> icon, not <span> elements */
+    #mobileToggle i,
+    .mobile-toggle i {
+        display: inline-block !important;
+
+        color: #111111 !important;
+        font-size: 27px !important;
+        line-height: 1 !important;
+
         opacity: 1 !important;
         visibility: visible !important;
     }
 
-    #mobileToggle span {
-        display: block !important;
-        width: 24px !important;
-        height: 3px !important;
-        min-height: 3px !important;
+    /* Keep the mobile navigation above the page content */
+    #mainNavbar {
+        position: sticky;
+        top: 0;
+        z-index: 10000;
+    }
 
-        background-color: #111111 !important;
-        border-radius: 3px !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-        flex-shrink: 0 !important;
+    /* Ensure the menu opens correctly when activated */
+    #navLinks.active {
+        display: flex !important;
+        z-index: 99998 !important;
     }
 }
