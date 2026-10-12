@@ -782,3 +782,59 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showGalleryPhotos, 4000);
 
 });
+/* =========================================================
+   SAVLA HRI TRAVELS - AUTOMATIC GALLERY SLIDER
+   Changes the visible group of photos automatically
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const gallery = document.querySelector(".gallery-grid");
+
+    if (!gallery) {
+        return;
+    }
+
+    const photos = Array.from(
+        gallery.querySelectorAll(".gallery-item")
+    );
+
+    // At least 5 photos are required to see a change.
+    if (photos.length <= 4) {
+        return;
+    }
+
+    let currentIndex = 0;
+
+    // Display four photos at a time.
+    const visibleCount = 4;
+
+    function showGalleryPhotos() {
+
+        photos.forEach(function (photo, index) {
+
+            const relativeIndex =
+                (index - currentIndex + photos.length) %
+                photos.length;
+
+            const isVisible = relativeIndex < visibleCount;
+
+            photo.style.display = isVisible ? "block" : "none";
+
+            if (isVisible) {
+                photo.style.opacity = "1";
+                photo.style.transform = "translateX(0)";
+            }
+        });
+
+        // Advance to the next group of photos.
+        currentIndex =
+            (currentIndex + visibleCount) % photos.length;
+    }
+
+    showGalleryPhotos();
+
+    // Change the photos every 4 seconds.
+    setInterval(showGalleryPhotos, 4000);
+
+});
